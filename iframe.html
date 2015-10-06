@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>postmessage Test Suite</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../postmessage.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        var msg = "this data of iframe Header";
+        pm({
+          target: window.parent,
+          type:"message-pipe",
+          data:{name:msg},
+          success: function() {
+              console.log('success of postmessage');
+              $("#msg").html(msg);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="msg"></h1>
+  </body>
+</html>

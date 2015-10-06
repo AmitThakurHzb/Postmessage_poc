@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>postmessage POC</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../postmessage.js"></script>
+    <script type="text/javascript">
+
+      $(function() {
+         pm.bind("message-pipe", function(data) {
+           console.log(data);
+         });
+      });
+    </script>
+
+  </head>
+  <body>
+    <iframe id="iframe" src="https://127.0.0.1/cors/postmessage/test/iframe.html" name="iframe" frameborder="0"></iframe>
+  </body>
+</html>
